@@ -1,7 +1,6 @@
 package com.example.yuagabe.domain.user;
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @Getter

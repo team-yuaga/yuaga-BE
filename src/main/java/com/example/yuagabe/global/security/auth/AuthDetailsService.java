@@ -1,6 +1,5 @@
 package com.example.yuagabe.global.security.auth;
 
-
 import com.example.yuagabe.domain.user.exception.UserNotFoundException;
 import com.example.yuagabe.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
