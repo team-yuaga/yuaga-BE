@@ -1,6 +1,6 @@
 package com.example.yuagabe.global.security.auth;
 
-import com.example.yuagabe.domain.user.User;
+import com.example.yuagabe.domain.user.domain.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
