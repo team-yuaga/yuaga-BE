@@ -12,20 +12,23 @@ import javax.persistence.*;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    private Long id;
+
+    @Column(columnDefinition = "varchar(255)", nullable = false)
     private String accountId;
 
-    @Column(columnDefinition = "varchar(20)", nullable = false)
+    @Column(columnDefinition = "varchar(255)", nullable = false)
     private String nickName;
 
-    @Column(columnDefinition = "varchar(20)", nullable = false)
+    @Column(columnDefinition = "varchar(255)", nullable = false)
     private String password;
 
-    @Column(columnDefinition = "varchar(6)")
-    private String height;
+    @Column(columnDefinition = "varchar(20)")
+    private Long height;
 
-    @Column(columnDefinition = "varchar(6)")
-    private String weight;
+    @Column(columnDefinition = "varchar(20)")
+    private Long weight;
 
     @Column(columnDefinition = "TEXT")
     private String skin;
@@ -33,7 +36,7 @@ public class User {
     @Column(columnDefinition = "TEXT")
     private String style;
 
-    @Column(name = "personal_color", columnDefinition = "varchar(20)")
+    @Column(name = "personal_color", columnDefinition = "varchar(255)")
     @Enumerated(EnumType.STRING)
-    private String UserPersonalColor;
+    private UserPersonalColor UserPersonalColor;
 }
