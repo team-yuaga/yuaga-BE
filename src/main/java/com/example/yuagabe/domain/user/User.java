@@ -1,10 +1,8 @@
 package com.example.yuagabe.domain.user;
 
-
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Builder
@@ -15,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private String accountId;
 
     @Column(columnDefinition = "varchar(20)", nullable = false)
     private String nickName;
