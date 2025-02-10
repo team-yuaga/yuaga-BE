@@ -1,13 +1,14 @@
 package com.example.yuagabe.global.security.jwt;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 @Getter
 @AllArgsConstructor
-@ConfigurationProperties(prefix = "jwt", ignoreUnknownFields = false)
+@ConstructorBinding
+@ConfigurationProperties(prefix = "jwt")
 public class JwtProperty {
 
     private final String secretKey;
