@@ -1,4 +1,4 @@
-package com.example.yuagabe.domain.user;
+package com.example.yuagabe.domain.user.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

@@ -1,4 +1,4 @@
-package com.example.yuagabe.domain.user;
+package com.example.yuagabe.domain.user.domain;
 
 public enum UserPersonalColor {
     SPRING("봄웜"),

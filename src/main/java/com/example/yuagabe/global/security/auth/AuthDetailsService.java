@@ -1,7 +1,7 @@
 package com.example.yuagabe.global.security.auth;
 
 import com.example.yuagabe.domain.user.exception.UserNotFoundException;
-import com.example.yuagabe.domain.user.repository.UserRepository;
+import com.example.yuagabe.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

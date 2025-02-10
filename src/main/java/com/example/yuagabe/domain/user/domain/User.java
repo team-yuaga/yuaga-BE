@@ -1,4 +1,4 @@
-package com.example.yuagabe.domain.user;
+package com.example.yuagabe.domain.user.domain;
 
 import lombok.*;
 import javax.persistence.*;
@@ -37,5 +37,5 @@ public class User {
 
     @Column(name = "personal_color", columnDefinition = "varchar(255)")
     @Enumerated(EnumType.STRING)
-    private UserPersonalColor UserPersonalColor;
+    private com.example.yuagabe.domain.user.domain.UserPersonalColor UserPersonalColor;
 }
