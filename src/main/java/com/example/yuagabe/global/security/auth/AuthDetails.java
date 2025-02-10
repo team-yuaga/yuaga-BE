@@ -29,7 +29,7 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getNickName();
+        return user.getAccountId();
     }
 
     @Override

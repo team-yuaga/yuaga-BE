@@ -41,6 +41,7 @@ public class SecurityConfig {
                 // user
                 .antMatchers(HttpMethod.POST, "/users/signup").permitAll()
                 .antMatchers(HttpMethod.POST, "/users/signin").permitAll()
+                .antMatchers(HttpMethod.PATCH, "/users/nickname").authenticated()
 
                 // feed
                 .antMatchers(HttpMethod.GET, "/feed/list").permitAll()
