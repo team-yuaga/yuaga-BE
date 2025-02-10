@@ -1,9 +1,9 @@
 package com.example.yuagabe.domain.user.service;
 
-import com.example.yuagabe.domain.user.User;
+import com.example.yuagabe.domain.user.domain.User;
 import com.example.yuagabe.domain.user.exception.PasswordMisMatchException;
 import com.example.yuagabe.domain.user.presentation.dto.request.SignUpRequest;
-import com.example.yuagabe.domain.user.repository.UserRepository;
+import com.example.yuagabe.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
