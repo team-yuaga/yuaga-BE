@@ -3,10 +3,12 @@ package com.example.yuagabe.domain.user.presentation;
 import com.example.yuagabe.domain.user.presentation.dto.request.NicknameChangeRequest;
 import com.example.yuagabe.domain.user.presentation.dto.request.SignInRequest;
 import com.example.yuagabe.domain.user.presentation.dto.request.SignUpRequest;
+import com.example.yuagabe.domain.user.presentation.dto.request.UserInformationRequest;
 import com.example.yuagabe.domain.user.presentation.dto.response.TokenResponse;
 import com.example.yuagabe.domain.user.service.NicknameChangeService;
 import com.example.yuagabe.domain.user.service.SignInService;
 import com.example.yuagabe.domain.user.service.SignUpService;
+import com.example.yuagabe.domain.user.service.UserInformationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,7 @@ public class UserController {
     private final SignUpService signUpService;
     private final SignInService signInService;
     private final NicknameChangeService nicknameChangeService;
+    private final UserInformationService userInformationService;
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
@@ -37,5 +40,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public void nickname(@RequestBody @Valid NicknameChangeRequest request){
         nicknameChangeService.execute(request);
+    }
+
+    @PatchMapping("/information")
+    @ResponseStatus(HttpStatus.OK)
+    public void information(@RequestBody @Valid UserInformationRequest request){
+        userInformationService.execute(request);
     }
 }
