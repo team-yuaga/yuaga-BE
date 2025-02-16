@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 public class SignInService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtProperty jwtProperty;
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse execute(SignInRequest request){
