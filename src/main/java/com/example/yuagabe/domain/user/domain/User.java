@@ -43,4 +43,12 @@ public class User {
     public void changeNickname(String nickName) {
         this.nickName = nickName;
     }
+
+    public void UserInformation(Long height, Long weight, String skin, String style, UserPersonalColor userPersonalColor) {
+        this.height = height;
+        this.weight = weight;
+        this.skin = skin;
+        this.style = style;
+        this.userPersonalColor = userPersonalColor;
+    }
 }

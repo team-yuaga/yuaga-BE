@@ -1,6 +1,7 @@
 package com.example.yuagabe.domain.user.presentation.dto.request;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.Size;
 public class SignInRequest {
     @NotBlank
     @Size(max = 15, message = "아이디는 최대 15자까지 허용입니다.")
+    @JsonProperty("accountId")
     private String accountId;
 
     @NotBlank
