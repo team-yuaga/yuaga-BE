@@ -45,9 +45,7 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET, "/users/user").authenticated()
 
                 // feed
-                .antMatchers(HttpMethod.GET, "/feed/list").permitAll()
-                .antMatchers(HttpMethod.GET, "/feed/{feed-id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/feed/search/{title}").permitAll()
+                .antMatchers(HttpMethod.POST, "/feeds").authenticated()
 
                 .and()
                 .apply(new FilterConfig(jwtTokenProvider, objectMapper))
