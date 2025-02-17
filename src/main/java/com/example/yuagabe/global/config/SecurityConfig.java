@@ -1,4 +1,4 @@
-package com.example.yuagabe.global;
+package com.example.yuagabe.global.config;
 
 import com.example.yuagabe.global.security.jwt.JwtTokenProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +12,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.firewall.DefaultHttpFirewall;
+import org.springframework.security.web.firewall.HttpFirewall;
 
 @RequiredArgsConstructor
 @Configuration
@@ -35,9 +37,6 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
 
-                .antMatchers("/swagger-ui/**").permitAll()
-                .antMatchers("/v3/api-docs/**").permitAll()
-
                 // user
                 .antMatchers(HttpMethod.POST, "/users/signup").permitAll()
                 .antMatchers(HttpMethod.POST, "/users/signin").permitAll()
@@ -50,12 +49,15 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET, "/feed/{feed-id}").permitAll()
                 .antMatchers(HttpMethod.GET, "/feed/search/{title}").permitAll()
 
-                .anyRequest().authenticated()
-
                 .and()
                 .apply(new FilterConfig(jwtTokenProvider, objectMapper))
 
                 .and().build();
+    }
+
+    @Bean
+    public HttpFirewall httpFirewall() {
+        return new DefaultHttpFirewall();
     }
 
     @Bean

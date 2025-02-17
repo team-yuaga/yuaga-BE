@@ -1,4 +1,4 @@
-package com.example.yuagabe.global;
+package com.example.yuagabe.global.config;
 
 import com.example.yuagabe.global.error.ExceptionFilter;
 import com.example.yuagabe.global.security.jwt.JwtTokenFilter;
