@@ -5,10 +5,8 @@ import com.example.yuagabe.domain.user.presentation.dto.request.SignInRequest;
 import com.example.yuagabe.domain.user.presentation.dto.request.SignUpRequest;
 import com.example.yuagabe.domain.user.presentation.dto.request.UserInformationRequest;
 import com.example.yuagabe.domain.user.presentation.dto.response.TokenResponse;
-import com.example.yuagabe.domain.user.service.NicknameChangeService;
-import com.example.yuagabe.domain.user.service.SignInService;
-import com.example.yuagabe.domain.user.service.SignUpService;
-import com.example.yuagabe.domain.user.service.UserInformationService;
+import com.example.yuagabe.domain.user.presentation.dto.response.UserInformationResponse;
+import com.example.yuagabe.domain.user.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +21,7 @@ public class UserController {
     private final SignInService signInService;
     private final NicknameChangeService nicknameChangeService;
     private final UserInformationService userInformationService;
+    private final GetUserInformationService getUserInformationService;
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
@@ -46,5 +45,11 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public void information(@RequestBody @Valid UserInformationRequest request){
         userInformationService.execute(request);
+    }
+
+    @GetMapping("/user")
+    @ResponseStatus(HttpStatus.OK)
+    public UserInformationResponse user(){
+        return getUserInformationService.execute();
     }
 }
