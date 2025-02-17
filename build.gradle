@@ -42,8 +42,9 @@ dependencies {
     implementation 'org.springframework.data:spring-data-redis'
 
     // db connector
-    runtimeOnly 'mysql:mysql-connector-java'
-
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     // jwt
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
 }
