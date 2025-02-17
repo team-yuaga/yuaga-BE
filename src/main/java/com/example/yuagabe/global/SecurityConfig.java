@@ -43,6 +43,7 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.POST, "/users/signin").permitAll()
                 .antMatchers(HttpMethod.PATCH, "/users/nickname").authenticated()
                 .antMatchers(HttpMethod.PATCH, "/users/information").authenticated()
+                .antMatchers(HttpMethod.GET, "/users/user").authenticated()
 
                 // feed
                 .antMatchers(HttpMethod.GET, "/feed/list").permitAll()
