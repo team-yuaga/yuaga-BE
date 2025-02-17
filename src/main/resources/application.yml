@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_URL}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
+    url: jdbc:mysql://43.201.103.135:3306/yuaga
+    username: root
+    password: 12345678
 
   jpa:
     database: mysql
@@ -16,12 +16,12 @@ spring:
     property-naming-strategy: SNAKE_CASE
 
   redis:
-    port: ${REDIS_PORT}
-    host: ${REDIS_HOST}
+    port: 6379
+    host: 43.201.103.135
 
 jwt:
-  secret_key: ${SECRET_KEY}
-  access_exp: ${ACCESS_EXP}
-  refresh_exp: ${REFRESH_EXP}
-  header: ${HEADER}
-  prefix: ${PREFIX}
+  secret_key: djikakdfjasilohgisaughfiojznbhrhiudawjhgbvfbreuadijs
+  access_exp: 3600
+  refresh_exp: 86400
+  header: Authorization
+  prefix: Bearer
