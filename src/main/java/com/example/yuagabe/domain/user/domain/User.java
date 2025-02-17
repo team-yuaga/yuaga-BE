@@ -12,8 +12,8 @@ import javax.persistence.*;
 @Entity
 public class User {
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
     @Column(columnDefinition = "varchar(255)", nullable = false)
     private String accountId;
