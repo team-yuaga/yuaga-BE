@@ -19,7 +19,8 @@ import java.util.List;
 public class Feed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long feed_id;
+    @Column(name = "feed_id")
+    private Long id;
 
     @Column(name = "feed_local", columnDefinition = "varchar(10)", nullable = false)
     private FeedLocal feedLocal;
