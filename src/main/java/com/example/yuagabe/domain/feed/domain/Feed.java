@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.asm.Advice;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -42,18 +43,33 @@ public class Feed {
     @Column(name = "created_at")
     private LocalDate createdAt;
 
+    @Column(name = "updated_at")
+    private LocalDate updatedAt;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Builder
-    public Feed(FeedLocal feedLocal, String title, List<String> tags, Season season,LocalDate createdAt, User user){
+    public Feed(FeedLocal feedLocal, String title, String content, List<String> tags, Season season, User user){
         this.feedLocal = feedLocal;
         this.title = title;
+        this.content = content;
         this.tags = tags;
         this.season = season;
         this.createdAt = LocalDate.now();
         this.user = user;
+    }
+
+    public void ModifyFeed(FeedLocal feedLocal, String title, String content, List<String> tags, Season season, User user){
+        this.feedLocal = feedLocal;
+        this.title = title;
+        this.content = content;
+        this.tags = tags;
+        this.season = season;
+        this.updatedAt = LocalDate.now();
+        this.user = user;
+
     }
 }
 
