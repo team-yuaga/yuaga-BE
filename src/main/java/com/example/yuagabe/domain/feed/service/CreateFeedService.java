@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+
 @RequiredArgsConstructor
 @Service
 public class CreateFeedService {
@@ -25,6 +27,7 @@ public class CreateFeedService {
                 .title(request.getTitle())
                 .tags(request.getTags())
                 .season(request.getSeason())
+                .createdAt(LocalDate.now())
                 .user(user)
                 .build());
     }
