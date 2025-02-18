@@ -25,6 +25,7 @@ public class CreateFeedService {
         feedRepository.save(Feed.builder()
                 .feedLocal(request.getFeedLocal())
                 .title(request.getTitle())
+                .content(request.getContent())
                 .tags(request.getTags())
                 .season(request.getSeason())
                 .createdAt(LocalDate.now())
