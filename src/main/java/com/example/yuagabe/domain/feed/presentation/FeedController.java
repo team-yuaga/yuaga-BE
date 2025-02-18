@@ -1,9 +1,11 @@
 package com.example.yuagabe.domain.feed.presentation;
 
 import com.example.yuagabe.domain.feed.presentation.dto.request.CreateFeedRequest;
+import com.example.yuagabe.domain.feed.presentation.dto.response.GetDetailsFeedResponse;
 import com.example.yuagabe.domain.feed.presentation.dto.response.GetFeedResponse;
 import com.example.yuagabe.domain.feed.service.CreateFeedService;
 import com.example.yuagabe.domain.feed.service.DeleteFeedService;
+import com.example.yuagabe.domain.feed.service.GetDetailsService;
 import com.example.yuagabe.domain.feed.service.GetFeedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ public class FeedController {
     private final CreateFeedService createFeedService;
     private final DeleteFeedService deleteFeedService;
     private final GetFeedService getFeedService;
+    private final GetDetailsService getDetailsService;
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
@@ -36,5 +39,11 @@ public class FeedController {
     @ResponseStatus(HttpStatus.OK)
     public List<GetFeedResponse> getFeed(){
         return getFeedService.execute();
+    }
+
+    @GetMapping("/{feed-id}")
+    @ResponseStatus(HttpStatus.OK)
+    public GetDetailsFeedResponse getDetailsFeed(@PathVariable("feed-id") Long feedId){
+        return getDetailsService.execute(feedId);
     }
 }
