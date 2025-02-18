@@ -7,6 +7,8 @@ import com.example.yuagabe.domain.feed.exception.FeedNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Component
 public class FeedFacade {
@@ -14,5 +16,9 @@ public class FeedFacade {
 
     public Feed getFeed(Long feedId){
         return feedRepository.findById(feedId).orElseThrow(() -> FeedNotFoundException.EXCEPTION);
+    }
+
+    public List<Feed> getAllFeed(){
+        return feedRepository.findAll();
     }
 }
