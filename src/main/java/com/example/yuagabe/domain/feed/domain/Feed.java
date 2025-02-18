@@ -28,6 +28,9 @@ public class Feed {
     @Column(columnDefinition = "varchar(255)", nullable = false)
     private String title;
 
+    @Column(columnDefinition = "varchar(500)")
+    private String content;
+
     @ElementCollection
     @CollectionTable(name = "feed_tags", joinColumns = @JoinColumn(name = "feed_id"))
     @Column(columnDefinition = "varchar(255)")
