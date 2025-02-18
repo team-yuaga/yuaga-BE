@@ -1,12 +1,10 @@
 package com.example.yuagabe.domain.feed.presentation;
 
 import com.example.yuagabe.domain.feed.presentation.dto.request.CreateFeedRequest;
+import com.example.yuagabe.domain.feed.presentation.dto.request.ModifyFeedRequest;
 import com.example.yuagabe.domain.feed.presentation.dto.response.GetDetailsFeedResponse;
 import com.example.yuagabe.domain.feed.presentation.dto.response.GetFeedResponse;
-import com.example.yuagabe.domain.feed.service.CreateFeedService;
-import com.example.yuagabe.domain.feed.service.DeleteFeedService;
-import com.example.yuagabe.domain.feed.service.GetDetailsService;
-import com.example.yuagabe.domain.feed.service.GetFeedService;
+import com.example.yuagabe.domain.feed.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +20,7 @@ public class FeedController {
     private final DeleteFeedService deleteFeedService;
     private final GetFeedService getFeedService;
     private final GetDetailsService getDetailsService;
+    private final ModifyFeedService modifyFeedService;
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
@@ -45,5 +44,11 @@ public class FeedController {
     @ResponseStatus(HttpStatus.OK)
     public GetDetailsFeedResponse getDetailsFeed(@PathVariable("feed-id") Long feedId){
         return getDetailsService.execute(feedId);
+    }
+
+    @PatchMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public void modifyFeed(@RequestBody @Valid ModifyFeedRequest request){
+        modifyFeedService.execute(request);
     }
 }
