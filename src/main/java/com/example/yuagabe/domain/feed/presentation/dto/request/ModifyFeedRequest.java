@@ -17,4 +17,7 @@ public class ModifyFeedRequest {
     private String content;
     private List<String> tags;
     private Season season;
+    private String type;
+    private String productName;
+    private String purchaseUrl;
 }

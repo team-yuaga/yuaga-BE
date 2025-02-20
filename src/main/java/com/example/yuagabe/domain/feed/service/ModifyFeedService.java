@@ -18,6 +18,6 @@ public class ModifyFeedService {
         User user = userFacade.getCurrentUser();
         Feed feed = feedFacade.getFeed(request.getFeedId());
 
-        feed.ModifyFeed(request.getFeedLocal(), request.getTitle(), request.getContent(), request.getTags(), request.getSeason(), user);
+        feed.ModifyFeed(request.getFeedLocal(), request.getTitle(), request.getContent(), request.getTags(), request.getSeason(), request.getType(), request.getProductName(), request.getPurchaseUrl(), user);
     }
 }

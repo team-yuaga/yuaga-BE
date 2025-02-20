@@ -28,6 +28,9 @@ public class CreateFeedService {
                 .content(request.getContent())
                 .tags(request.getTags())
                 .season(request.getSeason())
+                .type(request.getType())
+                .productName(request.getProductName())
+                .purchaseUrl(request.getPurchaseUrl())
                 .createdAt(LocalDate.now())
                 .user(user)
                 .build());

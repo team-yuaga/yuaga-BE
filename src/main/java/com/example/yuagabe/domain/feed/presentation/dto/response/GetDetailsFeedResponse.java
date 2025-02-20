@@ -19,8 +19,11 @@ public class GetDetailsFeedResponse {
     private final String nickname;
     private final LocalDate createdAt;
     private final Long likeCount;
+    private final String type;
+    private final String productName;
+    private final String purchaseUrl;
 
-    public GetDetailsFeedResponse(Long feedId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount) {
+    public GetDetailsFeedResponse(Long feedId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount, String type, String productName, String purchaseUrl) {
         this.feedId = feedId;
         this.title = title;
         this.content = content;
@@ -29,5 +32,8 @@ public class GetDetailsFeedResponse {
         this.nickname = nickname;
         this.createdAt = createdAt;
         this.likeCount = likeCount;
+        this.type = type;
+        this.productName = productName;
+        this.purchaseUrl = purchaseUrl;
     }
 }

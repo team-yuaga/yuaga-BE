@@ -25,4 +25,9 @@ public class CreateFeedRequest {
 
     private Season season;
 
+    private String type;
+
+    private String productName;
+
+    private String purchaseUrl;
 }
