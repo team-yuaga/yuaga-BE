@@ -17,6 +17,6 @@ public class GetFeedService {
     @Transactional
     public List<GetFeedResponse> execute() {
         List<Feed> feeds = feedFacade.getAllFeed();
-        return feeds.stream().map(feed -> new GetFeedResponse(feed.getTitle(), feed.getTags(), feed.getCreatedAt())).toList();
+        return feeds.stream().map(feed -> new GetFeedResponse(feed.getId(), feed.getTitle(), feed.getTags(), feed.getCreatedAt())).toList();
     }
 }

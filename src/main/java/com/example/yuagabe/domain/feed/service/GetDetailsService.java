@@ -18,6 +18,6 @@ public class GetDetailsService {
         Feed feed = feedFacade.getFeed(feedId);
         User user = userFacade.getCurrentUser();
 
-        return new GetDetailsFeedResponse(feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), null);
+        return new GetDetailsFeedResponse(feed.getId(), feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), null);
     }
 }
