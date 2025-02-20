@@ -18,9 +18,9 @@ public class GetDetailsFeedResponse {
     private final Season season;
     private final String nickname;
     private final LocalDate createdAt;
-    private final Long like;
+    private final Long likeCount;
 
-    public GetDetailsFeedResponse(Long feedId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long like) {
+    public GetDetailsFeedResponse(Long feedId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount) {
         this.feedId = feedId;
         this.title = title;
         this.content = content;
@@ -28,6 +28,6 @@ public class GetDetailsFeedResponse {
         this.season = season;
         this.nickname = nickname;
         this.createdAt = createdAt;
-        this.like = like;
+        this.likeCount = likeCount;
     }
 }
