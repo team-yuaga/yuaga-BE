@@ -24,6 +24,6 @@ public class GetFeedService {
     public List<GetFeedResponse> execute() {
         List<Feed> feeds = feedFacade.getAllFeed();
         User user = userFacade.getCurrentUser();
-        return feeds.stream().map(feed -> new GetFeedResponse(feed.getId(), feed.getTitle(), feed.getTags(), feed.getCreatedAt(), likeRepository.existsByFeedAndUser(feed, user))).toList();
+        return feeds.stream().map(feed -> new GetFeedResponse(feed.getId(), feed.getTitle(), feed.getTags(), feed.getFeedLocal(), feed.getSeason(), feed.getCreatedAt(), likeRepository.existsByFeedAndUser(feed, user))).toList();
     }
 }

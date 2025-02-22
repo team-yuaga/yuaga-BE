@@ -9,13 +9,13 @@ import lombok.Getter;
 @Builder
 public class UserInformationResponse {
     private final String nickName;
-    private final Number height;
-    private final Number weight;
+    private final String height;
+    private final String weight;
     private final String skin;
     private final String style;
     private final UserPersonalColor userPersonalColor;
 
-    public UserInformationResponse(String nickName, Number height, Number weight,
+    public UserInformationResponse(String nickName, String height, String weight,
                                    String skin, String style, UserPersonalColor userPersonalColor) {
         this.nickName = nickName;
         this.height = height;

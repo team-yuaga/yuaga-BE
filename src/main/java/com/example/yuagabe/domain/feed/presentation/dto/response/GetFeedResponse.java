@@ -1,5 +1,7 @@
 package com.example.yuagabe.domain.feed.presentation.dto.response;
 
+import com.example.yuagabe.domain.feed.domain.FeedLocal;
+import com.example.yuagabe.domain.feed.domain.Season;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -12,13 +14,17 @@ public class GetFeedResponse {
     private final Long feedId;
     private final String title;
     private final List<String> tags;
+    private final FeedLocal style;
+    private final Season season;
     private final LocalDate createdAt;
     private final Boolean likeBoolean;
 
-    public GetFeedResponse(Long feedId, String title, List<String> tags, LocalDate createdAt, Boolean likeBoolean){
+    public GetFeedResponse(Long feedId, String title, List<String> tags, FeedLocal style, Season season, LocalDate createdAt, Boolean likeBoolean) {
         this.feedId = feedId;
         this.title = title;
         this.tags = tags;
+        this.style = style;
+        this.season = season;
         this.createdAt = createdAt;
         this.likeBoolean = likeBoolean;
     }
