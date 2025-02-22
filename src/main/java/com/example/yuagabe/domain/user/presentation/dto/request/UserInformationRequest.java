@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserInformationRequest {
 
-    private Long height;
+    private Number height;
 
-    private Long weight;
+    private Number weight;
 
     private String skin;
 
