@@ -30,10 +30,10 @@ public class User {
     @Column(columnDefinition = "varchar(20)")
     private Number weight;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "varchar(255)")
     private String skin;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "varchar(255)")
     private String style;
 
     @Column(name = "personal_color", columnDefinition = "varchar(255)")
