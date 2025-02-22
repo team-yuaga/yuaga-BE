@@ -25,10 +25,10 @@ public class User {
     private String password;
 
     @Column(columnDefinition = "varchar(20)")
-    private Number height;
+    private String height;
 
     @Column(columnDefinition = "varchar(20)")
-    private Number weight;
+    private String weight;
 
     @Column(columnDefinition = "varchar(255)")
     private String skin;
@@ -44,7 +44,7 @@ public class User {
         this.nickName = nickName;
     }
 
-    public void UserInformation(Number height, Number weight, String skin, String style, UserPersonalColor userPersonalColor) {
+    public void UserInformation(String height, String weight, String skin, String style, UserPersonalColor userPersonalColor) {
         this.height = height;
         this.weight = weight;
         this.skin = skin;
