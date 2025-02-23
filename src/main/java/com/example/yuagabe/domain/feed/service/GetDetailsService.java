@@ -21,7 +21,8 @@ public class GetDetailsService {
         Feed feed = feedFacade.getFeed(feedId);
         User user = userFacade.getCurrentUser();
         Long like = likeFacade.countLikesByFeedId(feedId);
+        Boolean likeBoolean = likeFacade.likeBoolean(feed, user);
 
-        return new GetDetailsFeedResponse(feed.getId(),user.getId(), feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), like, feed.getType(), feed.getProductName(), feed.getPurchaseUrl());
+        return new GetDetailsFeedResponse(feed.getId(), user.getId(), feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), like, likeBoolean, feed.getType(), feed.getProductName(), feed.getPurchaseUrl());
     }
 }

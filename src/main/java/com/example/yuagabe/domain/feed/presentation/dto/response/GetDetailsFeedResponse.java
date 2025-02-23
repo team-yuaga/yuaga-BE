@@ -20,11 +20,12 @@ public class GetDetailsFeedResponse {
     private final String nickname;
     private final LocalDate createdAt;
     private final Long likeCount;
+    private final Boolean likeBoolean;
     private final String type;
     private final String productName;
     private final String purchaseUrl;
 
-    public GetDetailsFeedResponse(Long feedId,Long userId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount, String type, String productName, String purchaseUrl) {
+    public GetDetailsFeedResponse(Long feedId, Long userId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount, Boolean likeBoolean, String type, String productName, String purchaseUrl) {
         this.feedId = feedId;
         this.userId = userId;
         this.title = title;
@@ -34,6 +35,7 @@ public class GetDetailsFeedResponse {
         this.nickname = nickname;
         this.createdAt = createdAt;
         this.likeCount = likeCount;
+        this.likeBoolean = likeBoolean;
         this.type = type;
         this.productName = productName;
         this.purchaseUrl = purchaseUrl;
