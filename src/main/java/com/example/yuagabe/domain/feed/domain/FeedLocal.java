@@ -19,7 +19,7 @@ public enum FeedLocal {
     @JsonCreator
     public static FeedLocal from(String value) {
         return Arrays.stream(FeedLocal.values())
-                .filter(feedLocal -> feedLocal.feedLocal.equals(value))
+                .filter(feedLocal -> feedLocal.feedLocal.equalsIgnoreCase(value))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 feedLocal 값입니다: " + value));
     }
