@@ -1,5 +1,7 @@
 package com.example.yuagabe.domain.feed.presentation;
 
+import com.example.yuagabe.domain.feed.domain.Feed;
+import com.example.yuagabe.domain.feed.domain.FeedLocal;
 import com.example.yuagabe.domain.feed.presentation.dto.request.CreateFeedRequest;
 import com.example.yuagabe.domain.feed.presentation.dto.request.ModifyFeedRequest;
 import com.example.yuagabe.domain.feed.presentation.dto.response.GetDetailsFeedResponse;
@@ -21,6 +23,7 @@ public class FeedController {
     private final GetFeedService getFeedService;
     private final GetDetailsService getDetailsService;
     private final ModifyFeedService modifyFeedService;
+    private final SearchByFeedLocal searchByFeedLocal;
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
@@ -36,19 +39,24 @@ public class FeedController {
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
-    public List<GetFeedResponse> getFeed(){
+    public List<GetFeedResponse> getFeed() {
         return getFeedService.execute();
     }
 
     @GetMapping("/{feed-id}")
     @ResponseStatus(HttpStatus.OK)
-    public GetDetailsFeedResponse getDetailsFeed(@PathVariable("feed-id") Long feedId){
+    public GetDetailsFeedResponse getDetailsFeed(@PathVariable("feed-id") Long feedId) {
         return getDetailsService.execute(feedId);
     }
 
     @PatchMapping()
     @ResponseStatus(HttpStatus.OK)
-    public void modifyFeed(@RequestBody @Valid ModifyFeedRequest request){
+    public void modifyFeed(@RequestBody @Valid ModifyFeedRequest request) {
         modifyFeedService.execute(request);
+    }
+
+    @GetMapping("/query")
+    public List<GetFeedResponse> getFeeds(@RequestParam(name = "category", required = false) FeedLocal feedLocal) {
+        return searchByFeedLocal.execute(feedLocal);
     }
 }
