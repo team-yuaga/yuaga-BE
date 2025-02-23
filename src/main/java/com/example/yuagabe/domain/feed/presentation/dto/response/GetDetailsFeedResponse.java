@@ -12,6 +12,7 @@ import java.util.List;
 @Builder
 public class GetDetailsFeedResponse {
     private final Long feedId;
+    private final Long userId;
     private final String title;
     private final String content;
     private final List<String> tags;
@@ -23,8 +24,9 @@ public class GetDetailsFeedResponse {
     private final String productName;
     private final String purchaseUrl;
 
-    public GetDetailsFeedResponse(Long feedId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount, String type, String productName, String purchaseUrl) {
+    public GetDetailsFeedResponse(Long feedId,Long userId, String title, String content, List<String> tags, Season season, String nickname, LocalDate createdAt, Long likeCount, String type, String productName, String purchaseUrl) {
         this.feedId = feedId;
+        this.userId = userId;
         this.title = title;
         this.content = content;
         this.tags = tags;

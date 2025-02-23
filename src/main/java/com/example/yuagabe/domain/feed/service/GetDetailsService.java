@@ -22,6 +22,6 @@ public class GetDetailsService {
         User user = userFacade.getCurrentUser();
         Long like = likeFacade.countLikesByFeedId(feedId);
 
-        return new GetDetailsFeedResponse(feed.getId(), feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), like, feed.getType(), feed.getProductName(), feed.getPurchaseUrl());
+        return new GetDetailsFeedResponse(feed.getId(),user.getId(), feed.getTitle(), feed.getContent(), feed.getTags(), feed.getSeason(), user.getNickName(), feed.getCreatedAt(), like, feed.getType(), feed.getProductName(), feed.getPurchaseUrl());
     }
 }
