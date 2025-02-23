@@ -49,6 +49,7 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.DELETE, "/feeds/{feed-id}").authenticated()
                 .antMatchers(HttpMethod.GET, "/feeds").authenticated()
                 .antMatchers(HttpMethod.GET, "/feeds/{feed-id}").authenticated()
+                .antMatchers(HttpMethod.GET, "/feeds/query").authenticated()
                 .antMatchers(HttpMethod.PATCH, "/feeds").authenticated()
 
                 // like
