@@ -1,6 +1,5 @@
 package com.example.yuagabe.domain.feed.presentation;
 
-import com.example.yuagabe.domain.feed.domain.Feed;
 import com.example.yuagabe.domain.feed.domain.FeedLocal;
 import com.example.yuagabe.domain.feed.presentation.dto.request.CreateFeedRequest;
 import com.example.yuagabe.domain.feed.presentation.dto.request.ModifyFeedRequest;
