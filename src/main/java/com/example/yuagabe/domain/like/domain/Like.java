@@ -38,4 +38,12 @@ public class Like {
         this.feed = feed;
         this.user = user;
     }
+
+    public Feed getFeed() {
+        return feed;
+    }
+
+    public User getUser(){
+        return user;
+    }
 }

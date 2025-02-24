@@ -55,6 +55,7 @@ public class SecurityConfig {
                 // like
                 .antMatchers(HttpMethod.POST, "/likes/{feed-id}").authenticated()
                 .antMatchers(HttpMethod.DELETE, "/likes/{feed-id}").authenticated()
+                .antMatchers(HttpMethod.GET, "/likes/{user-id}").authenticated()
 
                 .and()
                 .apply(new FilterConfig(jwtTokenProvider, objectMapper))
